@@ -27,6 +27,8 @@ pip-log.txt
 env
 *.pyc
 build
+.idea
 
 .vscode
 
+*.iml
