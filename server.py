@@ -19,7 +19,9 @@ line_bot_api = LineBotApi(LINE_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 
-SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+GOOGLE_CLIENT_ID = os.environ['']
+GOOGLE_CLIENT_SECRET = os.environ['']
+GOOGLE_RERESH_TOKEN = os.environ['']
 
 
 logger = logging.getLogger(__name__)
@@ -58,7 +60,7 @@ def handle_message(event):
     logger.info(event)
 
     if event.message.text.find('予定') >= 0 or event.message.text.find('スケジュール') >= 0:
-
+        logger.info("")
     else:
         line_bot_api.reply_message(
             event.reply_token,
